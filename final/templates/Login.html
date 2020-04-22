@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dengue Prediction System </title>
+    {% load static%}
+<link rel="stylesheet" type="text/css" href="{%static 'css\Login.css'%}" />
+  <link rel="stylesheet"  type="text/css" href="{%static 'css\main.css'%}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<script src="../static/js/Login.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+		<div class="top-bar fix">
+			<div class="top-bar-links">
+            <ul>
+            	<li><a href="/register/">Register</a></li>
+                <li><a href=/login/">Login</a></li>
+                 <li><a href="/help/">Help</a></li>
+            </ul>
+
+			<div class="socialmedia">
+        <ul>
+        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+        <a href="https://twitter.com" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+        </ul>
+              </div>
+
+
+
+               </div>
+
+		   </div>
+
+
+ <header class="fix">
+       <div class="image">
+
+      <img src="../static/images/dengue_banner.jpg" />
+       </div>
+
+
+
+        </header>
+
+<nav>
+         <ul>
+        <li><a href="/home/">Home</a></li>
+           <li><a href="/disease/">Disease Description</a></li>
+           <li><a href="/data/">Data</a></li>
+        <li><a href="/maps/">Maps</a></li>
+         <li><a href="/prediction">Prediction </a></li>
+        <li><a href="/feedback/">Feedback </a></li>
+        <li><a href="/about/">About us</a></li>
+        </ul>
+         </nav>
+
+
+
+<<form action="login" method="POST">
+  {% csrf_token %}
+
+   <br>
+    <br>
+  <div class="container3">
+      <h13><center><b>Login</b></center></h13>
+<br>
+      <br>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="username" required>
+
+    <label for="password1"><b>Password</b></label>
+    <input type="password" placeholder="Enter  Password" name="password" required>
+
+      
+
+    <button type="submit" >Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container3" style="background-color:#f1f1f1">
+    <span class="psw">Forgot <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession">password?</a></span>
+  </div>
+</form>
+
+  <footer class="fix2">
+ <div class="copyrights " >
+        <div class="left">
+        @ 2020 Copyright Dengue Prediction System.All Rights Reserved.
+        </div>
+        <div class="right ">
+        Website by:Adhee
+        </div>
+        </div>
+        </footer>
+ </div>
+</body>
+</html>
