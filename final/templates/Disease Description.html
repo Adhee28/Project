@@ -14,12 +14,18 @@
 <div class="wrapper">
 		<div class="top-bar fix">
 			<div class="top-bar-links">
-            <ul>
-            	<li><a href="{% url 'register' %}">Register</a></li>
+                <ul>
+                    {%if user.is_authenticated %}
+                    <li>Hello,{{user.username}}</li>
+                    <li><a href="accouts/logout">Logout</a></li>
+                      {% else %}
+                      <li><a href="{% url 'register' %}">Register</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
-                 <li><a href="{% url 'help' %}">Help</a></li>
-            </ul>
+                    {%endif%}
 
+                       
+                  </ul>
+            
 			<div class="socialmedia">
         <ul>
         <a href="https://www.facebook.com" class="fa fa-facebook"></a>
@@ -27,15 +33,15 @@
         <a href="https://www.instagram.com" class="fa fa-instagram"></a>
         </ul>
               </div>
+       
 
-
-
-               </div>
-
+       
+               </div>      
+			
 		   </div>
          <header class="fix">
        <div class="image">
-
+           
       <img src="../static/images/dengue_banner.jpg" />
        </div>
 
@@ -43,15 +49,15 @@
 
         </header>
 <nav>
-         <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-           <li><a href="{% url 'disease' %}">Disease Description</a></li>
-           <li><a href="{% url 'data' %}">Data</a></li>
-        <li><a href="{% url 'maps' %}">Maps</a></li>
-         <li><a href="{% url 'prediction' %}">Prediction </a></li>
-        <li><a href="{% url 'feedback' %}">Feedback </a></li>
-        <li><a href="{% url 'about' %}">About us</a></li>
-        </ul>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+       <li><a href="{% url 'dd' %}">Disease Description</a></li>
+       <li><a href="{% url 'data' %}">Data</a></li>
+    <li><a href="{% url 'maps' %}">Maps</a></li>
+     <li><a href="{% url 'prediction' %}">Prediction </a></li>
+    <li><a href="{% url 'FeedbackView' %}">Feedback </a></li>
+    <li><a href="{% url 'about' %}">About us</a></li>
+    </ul>
          </nav>
     <br>
 <h4> Description</h4>

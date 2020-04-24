@@ -1,21 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
-#from.models import Feedback
+
 
 # Create your views here.
-#def Feedback(request):
-    #name=request.POST["name"]
-    #email=request.POST["email"]
-    #description=request.POST["description"]
-
-    #feedback=Feedback(name=name,email=email,description=description)
-    #feedback.save()
-            #return render (request,'home.html')
-
-
-
-
-
 
 def login(request):
   if request.method=='POST':

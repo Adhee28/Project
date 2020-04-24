@@ -18,44 +18,51 @@
 <div class="wrapper">
 		<div class="top-bar fix">
 			<div class="top-bar-links">
-            <ul>
-            	<li><a href="{% url 'register' %}">Register</a></li>
-                <li><a href="{% url 'login' %}">Login</a></li>
-                 <li><a href="{% url 'help' %}">Help</a></li>
-            </ul>
-
-			<div class="socialmedia">
         <ul>
-        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
-        <a href="https://twitter.com" class="fa fa-twitter"></a>
-        <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+          {%if user.is_authenticated %}
+          <li>Hello,{{user.username}}</li>
+          <li><a href="accouts/logout">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'register' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+          {%endif%}
+
+             
         </ul>
-              </div>
-
-               </div>
-
-		   </div>
-    <header class="fix">
-       <div class="image">
-
-      <img src="../static/images/dengue_banner.jpg" />
-       </div>
+  
+<div class="socialmedia">
+<ul>
+<a href="https://www.facebook.com" class="fa fa-facebook"></a>
+<a href="https://twitter.com" class="fa fa-twitter"></a>
+<a href="https://www.instagram.com" class="fa fa-instagram"></a>
+</ul>
+    </div>
 
 
 
-        </header>
+     </div>      
 
+</div>
+<header class="fix">
+<div class="image">
+ 
+<img src="../static/images/dengue_banner.jpg" />
+</div>
+
+
+
+</header>
 <nav>
-         <ul>
-        <li><a href="{% url 'home' %}">Home</a></li>
-           <li><a href="{% url 'disease' %}">Disease Description</a></li>
-           <li><a href="{% url 'data' %}">Data</a></li>
-        <li><a href="{% url 'maps' %}">Maps</a></li>
-         <li><a href="{% url 'prediction' %}">Prediction </a></li>
-        <li><a href="{% url 'feedback' %}">Feedback </a></li>
-        <li><a href="{% url 'about' %}">About us</a></li>
-        </ul>
-         </nav>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+       <li><a href="{% url 'dd' %}">Disease Description</a></li>
+       <li><a href="{% url 'data' %}">Data</a></li>
+    <li><a href="{% url 'maps' %}">Maps</a></li>
+     <li><a href="{% url 'prediction' %}">Prediction </a></li>
+    <li><a href="{% url 'FeedbackView' %}">Feedback </a></li>
+    <li><a href="{% url 'about' %}">About us</a></li>
+    </ul>
+</nav>
 </br>
 </br>
 <form action="register" method="POST">

@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dengue Prediction System </title>
     {% load static%}
-<link rel="stylesheet" type="text/css" href="../static/css/Register.css" />
-  <link rel="stylesheet"  type="text/css" href="{%static 'css\main.css'%}"/>
+     <link rel="stylesheet"  type="text/css" href="{%static 'css\main.css'%}"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-  <script src="../static/js/Registration.js"></script>
+
 </head>
 
 
@@ -61,29 +60,42 @@
     <li><a href="{% url 'about' %}">About us</a></li>
     </ul>
 </nav>
-
-<br>
-    <br>
-
-<div class="container">
-    <h14><center><b>Feedback</b></center></h14>
-  <form action="FeedbackView" method="POST">
+</br>
+</br>
+<form action="/Updatedata/{{data.id}}"" method="POST">
     {% csrf_token %}
   
-    <label for="name">Name </label>
-    <input type="text" id="name" name="name" placeholder="Your  name..">
+<br>
+    <br>
+  <div class="container4">
+      <h14><center><b>Data Form </b> </center></h14>
+      <br>
+      <br>
+    <label for="Name"><b>Name of the officer</b></label>
+    <input type="text" id="Name"placeholder="Enter your name" name="Name" value="{{dataform.Name}}">
+      <br>
+    <label for="Year"><b> Year </b></label>
+    <input type="text" id="Year" placeholder="Enter the year " name="Year" value="{{dataform.Year}}">
+        <br>
+    <label for="Month"><b>Month</b></label>
+    <input type="text" id="Month" placeholder="Enter the month" name="Month" value="{{dataform.Month}}">
+    <label for="NumberOfDengueCase"><b>Number of dengue cases</b></label>
+    <input type="text" id="NumberOfDengueCase" placeholder="Enter the number of dengue cases" name="Number of dengue cases" value="{{dataform.NumberOfDengueCase}}">
+      <br>
+      <label for="MOHOffice "><b>MOH Office</b></label>
+    <input type="text" id="MOHOffice" placeholder="Enter the MOHOffice" name="MOHOffice" value="{{dataform.MOHOffice}}">
+      <br>
 
-     <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your email..">
+      <center><input type="submit" value="Submit"></center>
 
-   
-    <label for="description">Description</label>
-    <input type="text" id="description" name="description" placeholder="Write something..">
 
-    <center><input type="submit" value="Submit"></center>
-  </form>
-</div>
-     <footer class="fix2">
+  </div>
+
+
+</form>
+
+
+  <footer class="fix2">
  <div class="copyrights " >
         <div class="left">
         @ 2020 Copyright Dengue Prediction System.All Rights Reserved.
@@ -94,5 +106,6 @@
         </div>
         </footer>
         </div>
+
 </body>
 </html>
