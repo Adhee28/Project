@@ -9,7 +9,7 @@
   <link rel="stylesheet"  type="text/css" href="{%static 'css\main.css'%}"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-<script src="../static/js/Login.js"></script>
+
 </head>
 
 <body>
@@ -65,7 +65,7 @@
 
 
 
-<<form action="login" method="POST">
+<form action="login" method="POST">
   {% csrf_token %}
 
    <br>
@@ -80,6 +80,7 @@
     <label for="password1"><b>Password</b></label>
     <input type="password" placeholder="Enter  Password" name="password" required>
 
+    
       
 
     <button type="submit" >Login</button>
@@ -92,6 +93,11 @@
     <span class="psw">Forgot <a href="https://accounts.google.com/ServiceLogin/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession">password?</a></span>
   </div>
 </form>
+<div>
+  {%for message in messages %}
+  <h20> {{message}}</h20>
+  {%endfor%}
+</div>
 
   <footer class="fix2">
  <div class="copyrights " >

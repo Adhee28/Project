@@ -38,9 +38,6 @@ def Updatedata(request,id):
      dataform=DataModel.objects.all()
      return render(request,'Updatedate.html',{'dataform':dataform})
     
-
-
-
 def dd(request):
     return render(request,'Disease Description.html')
 

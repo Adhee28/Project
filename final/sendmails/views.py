@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 def mail(request):
     subject = "Test mail"
     msg = "Congratulations ,Email is done"
-    to = "hirunsanjitha@gmail.com"
+    to = "adheeshanavodi@gmail.com"
     res= send_mail(subject,msg, settings.EMAIL_HOST_USER, [to])
 
     if (res == 1):

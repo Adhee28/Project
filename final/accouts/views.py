@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib import messages
 from django.contrib.auth.models import User,auth
 
 
@@ -12,9 +13,9 @@ def login(request):
       user=auth.authenticate(username=username,password=password)
       if user is not None:
         auth.login(request,user)
-        print('invalid login')
         return redirect("/")
       else:
+          messages.info(request,'User doesnot exist')
           return redirect('login')
 
   else:
@@ -35,15 +36,19 @@ def register(request):
 
       if password1==password2:
         if User.objects.filter(username=username).exists():
-          print('Username is taken.Try with anthor username')
-        else:
-            
+          messages.info(request,'Username is taken.Try with another username')
+          return redirect ('register')
+        elif User.objects.filter(email=email).exists():
+           messages.info(request,'Email taken')
+           return redirect ('register')
+        else:   
           user=User.objects.create_user(username=username,password=password1,email=email)
           user.save()
           print('Registered to the system')
           return redirect('login')
       else:
-        print('Password is not matching')
+        messages.info(request,'Password is not matching')
+        return redirect ('register')
       return redirect('/')
 
     else:

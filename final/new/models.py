@@ -23,3 +23,4 @@ class DataModel (models.Model):
 
     class Meta:
         db_table="dataform"
+

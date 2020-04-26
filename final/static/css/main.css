@@ -354,7 +354,7 @@ body {font-family: Verdana, sans-serif;}
 div.calendar{
 margin:10px;
 width:50%;
-align:right;
+box-align:right;
 }
 
 
@@ -446,7 +446,7 @@ border-style:double;
 margin:10px;
 width:375px;
 height:400px;
-align:right;
+box-align:right;
  }
  h12{
 	font-family:Times New Roman;
@@ -498,4 +498,16 @@ input[type=text], select {
 div.new{
 margin:10px;
 float:right;
+}
+
+
+p11{
+	font-variant:normal;
+	font-size:24px;
+	font-weight:normal;
+	letter-spacing:-1px;
+	color:black;
+	font-family:"MS Serif", "New York", serif;
+	font-style:italic;
+
 }

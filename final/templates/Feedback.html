@@ -71,14 +71,14 @@
     {% csrf_token %}
   
     <label for="name">Name </label>
-    <input type="text" id="name" name="name" placeholder="Your  name..">
+    <input type="text" id="name" name="name" placeholder="Your  name.." required>
 
      <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your email..">
+    <input type="text" id="email" name="email" placeholder="Your email.." required>
 
    
     <label for="description">Description</label>
-    <input type="text" id="description" name="description" placeholder="Write something..">
+    <input type="text" id="description" name="description" placeholder="Write something.." required>
 
     <center><input type="submit" value="Submit"></center>
   </form>
